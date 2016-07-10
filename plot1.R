@@ -1,10 +1,13 @@
-#read data fron source
+#read data from source
 
 rawdata <- read.csv("./data/household_power_consumption.txt", header=TRUE, sep=';', na.strings="?")
 
 #convert to Date format
 
 rawdata$Date <- as.Date(rawdata$Date, format="%d/%m/%Y")
+
+#subsetting
+
 data <- subset(rawdata, subset = (Date >= "2007-02-01" & Date <= "2007-02-02"))
 
 #create DateTime column

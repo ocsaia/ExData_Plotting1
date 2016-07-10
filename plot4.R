@@ -1,4 +1,4 @@
-#read data fron source
+#read data from source
 
 rawdata <- read.csv("./data/household_power_consumption.txt", header=TRUE, sep=';', na.strings="?")
 
@@ -6,7 +6,7 @@ rawdata <- read.csv("./data/household_power_consumption.txt", header=TRUE, sep='
 
 rawdata$Date <- as.Date(rawdata$Date, format="%d/%m/%Y")
 
-#Subsetting
+#subsetting
 
 data <- subset(rawdata, subset = (Date >= "2007-02-01" & Date <= "2007-02-02"))
 
